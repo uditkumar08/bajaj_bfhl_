@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "bfhl-collection-id-12345",
+		"name": "Bajaj BFHL API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Request - Filter Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bajajbfhl-production.up.railway.app/bfhl",
+					"protocol": "https",
+					"host": [
+						"bajajbfhl-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"bfhl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Request - Operation Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bajajbfhl-production.up.railway.app/bfhl",
+					"protocol": "https",
+					"host": [
+						"bajajbfhl-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"bfhl"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

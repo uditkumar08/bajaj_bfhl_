@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/bfhl")
+@RequestMapping
 public class BfhlController {
 
     private final BfhlService bfhlService;
@@ -19,16 +19,23 @@ public class BfhlController {
         this.bfhlService = bfhlService;
     }
 
-    @PostMapping
+    @PostMapping("/bfhl")
     public ResponseEntity<BfhlResponse> process(@RequestBody BfhlRequest request) {
         BfhlResponse response = bfhlService.processData(request);
         return ResponseEntity.ok(response);
     }
 
-    @org.springframework.web.bind.annotation.GetMapping
+    @org.springframework.web.bind.annotation.GetMapping("/bfhl")
     public ResponseEntity<java.util.Map<String, Object>> getOperationCode() {
         java.util.Map<String, Object> response = new java.util.HashMap<>();
         response.put("operation_code", 1);
+        return ResponseEntity.ok(response);
+    }
+
+    @org.springframework.web.bind.annotation.GetMapping("/health")
+    public ResponseEntity<java.util.Map<String, String>> getHealth() {
+        java.util.Map<String, String> response = new java.util.HashMap<>();
+        response.put("status", "UP");
         return ResponseEntity.ok(response);
     }
 }
