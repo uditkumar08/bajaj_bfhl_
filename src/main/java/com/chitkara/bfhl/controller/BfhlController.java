@@ -24,4 +24,11 @@ public class BfhlController {
         BfhlResponse response = bfhlService.processData(request);
         return ResponseEntity.ok(response);
     }
+
+    @org.springframework.web.bind.annotation.GetMapping
+    public ResponseEntity<java.util.Map<String, Object>> getOperationCode() {
+        java.util.Map<String, Object> response = new java.util.HashMap<>();
+        response.put("operation_code", 1);
+        return ResponseEntity.ok(response);
+    }
 }
